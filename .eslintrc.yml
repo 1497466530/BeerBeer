@@ -1,0 +1,135 @@
+env:
+  es6: true
+  node: true
+extends: 'eslint:recommended'
+parserOptions:
+  ecmaVersion: 8
+  sourceType: module
+  ecmaFeatures:
+    experimentalObjectRestSpread: true
+globals:
+  debugConsole: true
+  Promise: true
+  Meteor: true
+  window: true
+  describe: true
+  it: true
+rules:
+  indent:
+    - error
+    - 4
+    - SwitchCase: 1
+  quotes:
+    - error
+    - single
+    - allowTemplateLiterals: true
+  semi:
+    - error
+    - always
+  no-console:
+    - off
+  no-extra-boolean-cast: off
+  no-use-before-define: error
+  space-unary-ops: error
+  no-else-return: error
+  no-dupe-args: error
+  no-dupe-keys: error
+  no-empty: error
+  no-empty-character-class: error
+  no-irregular-whitespace: error
+  no-unexpected-multiline: error
+  valid-typeof: error
+  complexity: # 圈复杂度
+    - error
+    - 9
+  eqeqeq:
+    - error
+    - allow-null
+  guard-for-in: error
+  no-caller: error
+  no-eval: error
+  no-extend-native: error
+  no-extra-bind: error
+  no-implied-eval: warn
+  no-loop-func: error # 禁止在 loop 中声明函数
+  no-magic-numbers: off # 魔法数字，关闭
+  no-native-reassign: error # 禁止对原生对象赋值
+  no-new-wrappers: error # 禁止对 String，Number 和 Boolean 使用 new 操作符
+  no-octal: error # 禁用八进制字面量
+  no-octal-escape: error # 禁止在字符串中使用八进制转义序列
+  no-proto: error # 禁用__proto__属性
+  no-redeclare: error # 禁止重复var声明
+  no-self-assign: error # 禁止自我赋值
+  no-self-compare: error # 禁止自我比较
+  no-sequences: error # 禁止抛出非异常字面量
+  no-unmodified-loop-condition: error # 禁用无变化的循环条件（避免死循环）
+  no-useless-call: error # 禁止无必要的.call()和.apply()
+  no-useless-concat: error # 禁止不必要的字符串字面量或模板字面量的连接
+  no-with: error
+
+  ################# 参数声明 #################
+  no-catch-shadow: error
+  no-shadow-restricted-names: error
+  no-undef: error
+  no-unused-vars:
+    - error
+    - vars: all
+      args: none
+
+  ################### 风格 ###################
+  camelcase: # 驼峰命名
+    - error
+    - properties: never # 是否对属性生效
+  eol-last: off # 文件末尾换行
+  key-spacing: # 对象字面量中空格的精确控制
+    - error
+    - beforeColon: false # 冒号前是否需要空格
+      mode: strict
+  lines-around-comment: # 注释首位的空行
+    - error
+    - allowBlockStart: true
+      allowObjectStart: true
+      allowArrayStart: true
+  space-before-blocks: error # 代码块前的空格
+  keyword-spacing: # 关键字引导的块中空格
+    - error
+    - before: true
+      after: true
+  arrow-spacing: # 箭头函数中的空格
+    - error
+    - before: true
+      after: true
+  brace-style: # 缩进风格
+    - error
+  max-len: # 强制一行的最大长度
+    - warn
+    - 120
+  max-params: # 强制每个函数声明的形参列表的最大数量
+    - warn
+    - 7
+  no-lonely-if: # 禁止 if 作为唯一的语句出现在 else 语句中
+    - warn
+  no-mixed-spaces-and-tabs: error # 不允许 tab 和空格混用
+  no-multiple-empty-lines: # 连续的多个空行
+    - warn
+    - max: 1 # 连续空行的最大数量
+  no-trailing-spaces: error # 禁用行尾空格
+  no-unneeded-ternary: warn # 禁止可以在有更简单的可替代的表达式时使用三元操作符
+  no-whitespace-before-property: error # 禁止属性前有空白
+  space-before-function-paren: error # 强制在 function 的左括号前使用空格
+  space-infix-ops:
+    - error
+  #### ES6
+  generator-star-spacing: # 强制 generator 函数中 * 号周围使用一致的空格
+    - error
+    - before: true
+      after: true
+  no-class-assign: error # 不允许修改类声明的变量
+  no-dupe-class-members: error # 不允许类成员中出现重复名称
+  no-this-before-super: error # 禁止 super() 前出现 this
+  no-useless-computed-key: error
+  no-var: error
+  prefer-spread: # 要求使用 ... 替代 call() 或 apply()
+    - error
+  prefer-template: off # 要求使用模板字符串替代字符串拼接
+  prefer-rest-params: warn # 要求使用 rest parameters 替代 arguments
